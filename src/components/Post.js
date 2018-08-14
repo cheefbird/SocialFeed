@@ -1,10 +1,12 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-export default function Post(props) {
+export default function Post({ date, author, post }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>POST TEXT GOES HERE!</Text>
+      <Text style={styles.dateText}>{date}</Text>
+      <Text style={styles.authorText}>{author}</Text>
+      <Text style={styles.postText}>{post}</Text>
     </View>
   );
 }
@@ -12,9 +14,20 @@ export default function Post(props) {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
-    marginVertical: 8
+    marginVertical: 8,
+    flex: 1,
+    justifyContent: "space-between"
   },
-  text: {
+  dateText: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: "red"
+  },
+  authorText: {
+    fontSize: 14,
+    fontWeight: "bold"
+  },
+  postText: {
     fontSize: 18
   }
 });
