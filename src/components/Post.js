@@ -2,9 +2,14 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 export default function Post({ date, author, post }) {
+  const getFormattedDate = date => {
+    const dateObject = new Date(date);
+    return dateObject.toDateString();
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.dateText}>{date}</Text>
+      <Text style={styles.dateText}>{getFormattedDate(date)}</Text>
       <Text style={styles.authorText}>{author}</Text>
       <Text style={styles.postText}>{post}</Text>
     </View>
