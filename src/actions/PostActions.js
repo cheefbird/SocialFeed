@@ -11,6 +11,9 @@ export const fetchPosts = () => {
           type: FETCH_POSTS,
           payload: json
         });
+      })
+      .catch(error => {
+        console.error(error);
       });
   };
 };
