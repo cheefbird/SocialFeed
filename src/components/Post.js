@@ -15,19 +15,22 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
     marginVertical: 8,
-    flex: 1,
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    alignItems: "stretch"
   },
   dateText: {
     fontSize: 12,
     fontWeight: "bold",
-    color: "red"
+    color: "red",
+    paddingBottom: 8
   },
   authorText: {
     fontSize: 14,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    paddingBottom: 8
   },
   postText: {
-    fontSize: 18
+    fontSize: 18,
+    flex: 1
   }
 });

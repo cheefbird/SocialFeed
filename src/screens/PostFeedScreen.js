@@ -12,11 +12,7 @@ export default class PostFeedScreen extends Component {
     const { created_at, user, text } = item;
     const { name } = user;
 
-    return (
-      <View style={styles.container}>
-        <Post date={created_at} author={name} post={text} />
-      </View>
-    );
+    return <Post date={created_at} author={name} post={text} />;
   };
 
   render() {
@@ -31,5 +27,5 @@ export default class PostFeedScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {}
+  container: { flex: 1 }
 });
