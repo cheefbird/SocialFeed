@@ -1,6 +1,6 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, ActivityIndicator } from "react-native";
 import { connect } from "react-redux";
 
 import { fetchPosts } from "../actions";
@@ -27,14 +27,21 @@ class PostFeedScreen extends Component {
   };
 
   render() {
+    const { loading } = this.props;
     return (
-      <FlatList
-        keyExtractor={this.keyExtractor}
-        data={this.props.posts}
-        renderItem={this.renderRow}
-        ItemSeparatorComponent={this.separator}
-        style={styles.list}
-      />
+      <View style={[styles.container, styles.spinner]}>
+        {loading ? (
+          <ActivityIndicator size="large" color="#000" />
+        ) : (
+          <FlatList
+            keyExtractor={this.keyExtractor}
+            data={this.props.posts}
+            renderItem={this.renderRow}
+            ItemSeparatorComponent={this.separator}
+            style={styles.list}
+          />
+        )}
+      </View>
     );
   }
 }
@@ -42,6 +49,10 @@ class PostFeedScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  spinner: {
+    justifyContent: "center",
+    alignItems: "center"
   },
   separator: {
     flex: 1,
@@ -56,11 +67,11 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  const posts = _.map(state.posts, val => {
+  const posts = _.map(state.postFeed.posts, val => {
     return { ...val };
   });
 
-  return { posts };
+  return { loading: state.postFeed.loading, posts };
 };
 
 export default connect(
