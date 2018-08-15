@@ -7,6 +7,10 @@ import { fetchPosts } from "../actions";
 import Post from "../components/Post";
 
 class PostFeedScreen extends Component {
+  static navigationOptions = {
+    title: "Social Feed"
+  };
+
   componentDidMount() {
     this.props.fetchPosts();
   }
