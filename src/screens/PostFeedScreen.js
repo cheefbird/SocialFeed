@@ -33,6 +33,7 @@ class PostFeedScreen extends Component {
         data={this.props.posts}
         renderItem={this.renderRow}
         ItemSeparatorComponent={this.separator}
+        style={styles.list}
       />
     );
   }
@@ -48,6 +49,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#d8d8d8",
     alignItems: "stretch",
     marginLeft: 8
+  },
+  list: {
+    backgroundColor: "#fff"
   }
 });
 
