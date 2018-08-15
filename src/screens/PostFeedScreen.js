@@ -8,6 +8,8 @@ import { sampleData } from "../static/feed";
 export default class PostFeedScreen extends Component {
   keyExtractor = item => item.id.toString();
 
+  separator = () => <View style={styles.separator} />;
+
   renderRow = ({ item }) => {
     const { created_at, user, text } = item;
     const { name } = user;
@@ -21,11 +23,21 @@ export default class PostFeedScreen extends Component {
         keyExtractor={this.keyExtractor}
         data={sampleData}
         renderItem={this.renderRow}
+        ItemSeparatorComponent={this.separator}
       />
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 }
+  container: {
+    flex: 1
+  },
+  separator: {
+    flex: 1,
+    height: 1,
+    backgroundColor: "#d8d8d8",
+    alignItems: "stretch",
+    marginLeft: 8
+  }
 });
