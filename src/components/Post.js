@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 
-export default function Post({ date, author, post }) {
+export default function Post({ userImage, date, author, post }) {
   const getFormattedDate = date => {
     const dateObject = new Date(date);
     return dateObject.toDateString();
@@ -10,13 +10,16 @@ export default function Post({ date, author, post }) {
 
   return (
     <TouchableOpacity style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={{ uri: userImage }} style={styles.image} />
+      </View>
       <View style={styles.contentContainer}>
         <Text style={styles.dateText}>{getFormattedDate(date)}</Text>
         <Text style={styles.authorText}>{author}</Text>
         <Text style={styles.postText}>{post}</Text>
       </View>
       <View style={styles.iconContainer}>
-        <MaterialIcon name="chevron-right" size={40} color="#d8d8d8" />
+        <MaterialIcon name="chevron-right" size={50} color="#d8d8d8" />
       </View>
     </TouchableOpacity>
   );
@@ -29,6 +32,16 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     marginHorizontal: 8,
     marginVertical: 5
+  },
+  imageContainer: {
+    justifyContent: "flex-start",
+    paddingTop: 8,
+    paddingRight: 5
+  },
+  image: {
+    width: 40,
+    height: 40,
+    borderRadius: 20
   },
   contentContainer: {
     flex: 9,

@@ -21,11 +21,16 @@ class PostFeedScreen extends Component {
 
   renderRow = ({ item }) => {
     const { created_at, user, text } = item;
-    const { name } = user;
+    const { name, profile_image_url_https } = user;
 
     return (
       <View>
-        <Post date={created_at} author={name} post={text} />
+        <Post
+          userImage={profile_image_url_https}
+          date={created_at}
+          author={name}
+          post={text}
+        />
       </View>
     );
   };
