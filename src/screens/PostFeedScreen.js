@@ -14,17 +14,20 @@ import { fetchPosts } from "../actions";
 import Post from "../components/Post";
 
 class PostFeedScreen extends Component {
-  static navigationOptions = {
-    title: "Social Feed",
-    headerRight: (
-      <TouchableOpacity
-        style={{ marginRight: 12 }}
-        activeOpacity={1.0}
-        onPress={() => console.log("SETTINGS BUTTON PRESSED")}
-      >
-        <MaterialIcon name="settings" size={26} color="#000" />
-      </TouchableOpacity>
-    )
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "Social Feed",
+      headerRight: (
+        <TouchableOpacity
+          style={{ marginRight: 12 }}
+          activeOpacity={1.0}
+          onPress={() => navigation.navigate("Settings")}
+        >
+          <MaterialIcon name="settings" size={26} color="#000" />
+        </TouchableOpacity>
+      ),
+      headerBackTitle: "Back"
+    };
   };
 
   componentDidMount() {

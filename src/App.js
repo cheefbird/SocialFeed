@@ -10,9 +10,15 @@ import reducers from "./reducers";
 import PostFeedScreen from "./screens/PostFeedScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 
-const AppStack = createStackNavigator({
-  Feed: PostFeedScreen
-});
+const AppStack = createStackNavigator(
+  {
+    Feed: PostFeedScreen,
+    Settings: SettingsScreen
+  },
+  {
+    initialRouteName: "Feed"
+  }
+);
 
 export default class App extends Component {
   render() {
