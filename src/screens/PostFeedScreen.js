@@ -31,7 +31,7 @@ class PostFeedScreen extends Component {
     return (
       <View style={[styles.container, styles.spinner]}>
         {loading ? (
-          <ActivityIndicator size="large" color="#000" />
+          <ActivityIndicator size="large" color="#ffa50a" />
         ) : (
           <FlatList
             keyExtractor={this.keyExtractor}

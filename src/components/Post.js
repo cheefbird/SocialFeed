@@ -18,9 +18,10 @@ export default function Post({ date, author, post }) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginHorizontal: 10,
     marginVertical: 8,
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "stretch"
   },
   dateText: {
@@ -32,7 +33,8 @@ const styles = StyleSheet.create({
   authorText: {
     fontSize: 14,
     fontWeight: "bold",
-    paddingBottom: 8
+    paddingBottom: 8,
+    color: "#000"
   },
   postText: {
     fontSize: 18,
