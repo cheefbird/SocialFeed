@@ -11,7 +11,7 @@ import PostFeedScreen from "./screens/PostFeedScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 
 const AppStack = createStackNavigator({
-  Feed: SettingsScreen
+  Feed: PostFeedScreen
 });
 
 export default class App extends Component {

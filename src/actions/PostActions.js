@@ -1,10 +1,13 @@
 import { FETCH_POSTS } from "./types";
 
-const path = "https://api.massrelevance.com/MassRelDemo/kindle.json";
+const path = resultsCount =>
+  `https://api.massrelevance.com/MassRelDemo/kindle.json?limit=${resultsCount}`;
 
-export const fetchPosts = () => {
+export const fetchPosts = resultsCount => {
+  const url = path(resultsCount);
+
   return dispatch => {
-    fetch(path)
+    fetch(url)
       .then(response => response.json())
       .then(json => {
         dispatch({

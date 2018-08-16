@@ -1,18 +1,34 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import { StyleSheet, View, FlatList, ActivityIndicator } from "react-native";
+import {
+  StyleSheet,
+  View,
+  FlatList,
+  ActivityIndicator,
+  TouchableOpacity
+} from "react-native";
 import { connect } from "react-redux";
+import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 
 import { fetchPosts } from "../actions";
 import Post from "../components/Post";
 
 class PostFeedScreen extends Component {
   static navigationOptions = {
-    title: "Social Feed"
+    title: "Social Feed",
+    headerRight: (
+      <TouchableOpacity
+        style={{ marginRight: 12 }}
+        activeOpacity={1.0}
+        onPress={() => console.log("SETTINGS BUTTON PRESSED")}
+      >
+        <MaterialIcon name="settings" size={26} color="#000" />
+      </TouchableOpacity>
+    )
   };
 
   componentDidMount() {
-    this.props.fetchPosts();
+    this.props.fetchPosts(this.props.numberOfResults);
   }
 
   keyExtractor = item => item.id.toString();
@@ -63,6 +79,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
+  settingsButton: {
+    flex: 1
+  },
   separator: {
     flex: 1,
     height: 1,
@@ -80,7 +99,9 @@ const mapStateToProps = state => {
     return { ...val };
   });
 
-  return { loading: state.postFeed.loading, posts };
+  const numberOfResults = state.settings.numberOfResults;
+
+  return { loading: state.postFeed.loading, posts, numberOfResults };
 };
 
 export default connect(
