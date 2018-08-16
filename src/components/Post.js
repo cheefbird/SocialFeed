@@ -25,8 +25,6 @@ export default function Post({ date, author, post }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    // marginHorizontal: 10,
-    // marginVertical: 8,
     justifyContent: "center",
     alignItems: "stretch",
     marginHorizontal: 8,
