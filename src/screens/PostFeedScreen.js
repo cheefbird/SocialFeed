@@ -23,15 +23,21 @@ class PostFeedScreen extends Component {
     const { created_at, user, text } = item;
     const { name } = user;
 
-    return <Post date={created_at} author={name} post={text} />;
+    return (
+      <View>
+        <Post date={created_at} author={name} post={text} />
+      </View>
+    );
   };
 
   render() {
     const { loading } = this.props;
     return (
-      <View style={[styles.container, styles.spinner]}>
+      <View style={styles.container}>
         {loading ? (
-          <ActivityIndicator size="large" color="#ffa50a" />
+          <View style={styles.spinner}>
+            <ActivityIndicator size="large" color="#ffa50a" />
+          </View>
         ) : (
           <FlatList
             keyExtractor={this.keyExtractor}
@@ -47,9 +53,7 @@ class PostFeedScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
+  container: {},
   spinner: {
     justifyContent: "center",
     alignItems: "center"

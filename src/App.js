@@ -22,9 +22,7 @@ export default class App extends Component {
 
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <AppStack />
-        </View>
+        <AppStack />
       </Provider>
     );
   }
@@ -32,6 +30,6 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    // flex: 1
   }
 });
