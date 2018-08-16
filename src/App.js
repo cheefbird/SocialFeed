@@ -8,9 +8,10 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import reducers from "./reducers";
 import PostFeedScreen from "./screens/PostFeedScreen";
+import SettingsScreen from "./screens/SettingsScreen";
 
 const AppStack = createStackNavigator({
-  Feed: PostFeedScreen
+  Feed: SettingsScreen
 });
 
 export default class App extends Component {

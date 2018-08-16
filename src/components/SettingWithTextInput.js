@@ -7,7 +7,7 @@ export default class SettingWithTextInput extends PureComponent {
     super(props);
 
     this.state = {
-      value: this.props.value || 50
+      value: this.props.value.toString() || "50"
     };
   }
 
@@ -20,7 +20,9 @@ export default class SettingWithTextInput extends PureComponent {
             style={styles.textInput}
             value={this.state.value}
             onChangeText={text => this.setState({ value: text })}
-            onSubmitEditing={this.props.handleSubmitText(this.state.value)}
+            onSubmitEditing={() =>
+              this.props.handleSubmitText(this.state.value)
+            }
           />
         </View>
       </View>
@@ -42,7 +44,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#fff",
+    marginHorizontal: 8,
+    marginVertical: 5
   },
   label: {
     flex: 2,
