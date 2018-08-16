@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 export default function Post({ date, author, post }) {
   const getFormattedDate = date => {
@@ -8,11 +8,13 @@ export default function Post({ date, author, post }) {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.dateText}>{getFormattedDate(date)}</Text>
-      <Text style={styles.authorText}>{author}</Text>
-      <Text style={styles.postText}>{post}</Text>
-    </View>
+    <TouchableOpacity>
+      <View style={styles.container}>
+        <Text style={styles.dateText}>{getFormattedDate(date)}</Text>
+        <Text style={styles.authorText}>{author}</Text>
+        <Text style={styles.postText}>{post}</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -37,7 +39,6 @@ const styles = StyleSheet.create({
     color: "#000"
   },
   postText: {
-    fontSize: 18,
-    flex: 1
+    fontSize: 18
   }
 });
