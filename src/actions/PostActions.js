@@ -6,6 +6,7 @@ const path = resultsCount =>
 export const fetchPosts = resultsCount => {
   const url = path(resultsCount);
 
+  console.log(url);
   return dispatch => {
     fetch(url)
       .then(response => response.json())

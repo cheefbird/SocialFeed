@@ -7,8 +7,8 @@ import { setResultsCount } from "../actions";
 
 class SettingsScreen extends Component {
   updateSetting = value => {
-    console.log("UPDATE SETTINGS:");
-    console.log(value);
+    const number = parseInt(value);
+    this.props.setResultsCount(number);
   };
 
   render() {

@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_POSTS:
       return {
         loading: false,
-        posts: [...action.payload, ...state.posts]
+        posts: action.payload
       };
 
     default:
