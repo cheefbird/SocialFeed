@@ -1,16 +1,24 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
+import { connect } from "react-redux";
 
 import SettingWithTextInput from "../components/SettingWithTextInput";
+import { setResultsCount } from "../actions";
 
-export default class SettingsScreen extends Component {
+class SettingsScreen extends Component {
+  updateSetting = value => {
+    console.log("UPDATE SETTINGS:");
+    console.log(value);
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.card}>
           <SettingWithTextInput
             label="Number of results:"
-            handleSubmitText={text => console.log(`SUBMITTED TEXT: ${text}`)}
+            handleSubmitText={this.updateSetting}
+            value={this.props.results}
           />
         </View>
       </View>
@@ -30,3 +38,14 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow"
   }
 });
+
+const mapStateToProps = state => {
+  const { numberOfResults } = state.settings;
+
+  return { results: numberOfResults };
+};
+
+export default connect(
+  mapStateToProps,
+  { setResultsCount }
+)(SettingsScreen);

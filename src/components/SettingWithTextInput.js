@@ -7,7 +7,7 @@ export default class SettingWithTextInput extends PureComponent {
     super(props);
 
     this.state = {
-      value: this.props.value.toString() || "50"
+      value: this.props.value.toString()
     };
   }
 
@@ -18,7 +18,7 @@ export default class SettingWithTextInput extends PureComponent {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInput}
-            value={this.state.value}
+            value={this.props.value.toString()}
             onChangeText={text => this.setState({ value: text })}
             onSubmitEditing={() =>
               this.props.handleSubmitText(this.state.value)
