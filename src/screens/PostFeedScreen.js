@@ -20,7 +20,7 @@ class PostFeedScreen extends Component {
       headerRight: (
         <TouchableOpacity
           style={{ marginRight: 12 }}
-          activeOpacity={1.0}
+          activeOpacity={0.5}
           onPress={() => navigation.navigate("Settings")}
         >
           <MaterialIcon name="settings" size={26} color="#000" />
@@ -32,6 +32,17 @@ class PostFeedScreen extends Component {
 
   componentDidMount() {
     this.props.fetchPosts(this.props.numberOfResults);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.numberOfResults !== this.props.numberOfResults) {
+      this.props.fetchPosts(nextProps.numberOfResults);
+      return true;
+    } else if (this.props.posts.length !== nextProps.posts.length) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   keyExtractor = item => item.id.toString();
@@ -102,7 +113,7 @@ const mapStateToProps = state => {
     return { ...val };
   });
 
-  const numberOfResults = state.settings.numberOfResults;
+  const { numberOfResults } = state.settings;
 
   return { loading: state.postFeed.loading, posts, numberOfResults };
 };
