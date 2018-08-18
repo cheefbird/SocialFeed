@@ -2,6 +2,8 @@ import React, { PureComponent } from "react";
 import { StyleSheet, View, Text, TextInput } from "react-native";
 import PropTypes from "prop-types";
 
+import Card from "./common/Card";
+
 export default class SettingWithTextInput extends PureComponent {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ export default class SettingWithTextInput extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Card>
         <Text style={styles.label}>{this.props.label}</Text>
         <View style={styles.inputContainer}>
           <TextInput
@@ -25,7 +27,7 @@ export default class SettingWithTextInput extends PureComponent {
             }
           />
         </View>
-      </View>
+      </Card>
     );
   }
 }
@@ -41,14 +43,6 @@ SettingWithTextInput.defaultProps = {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-    marginHorizontal: 8,
-    marginVertical: 5
-  },
   label: {
     flex: 2,
     fontSize: 14,
