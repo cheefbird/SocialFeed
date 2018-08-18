@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#fff",
     marginHorizontal: 8,
-    marginVertical: 5
+    marginVertical: 5,
+    padding: 2
   }
 });

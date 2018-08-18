@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flex: 1,
-    borderBottomColor: "#f2f2f2",
+    borderBottomColor: "#000",
     borderBottomWidth: 1
   },
   textInput: {
