@@ -31,8 +31,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
   card: {
-    borderWidth: 1,
-    borderColor: "#000",
     marginHorizontal: 10,
     marginTop: 10,
     backgroundColor: "yellow"

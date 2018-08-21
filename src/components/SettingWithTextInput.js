@@ -22,6 +22,7 @@ export default class SettingWithTextInput extends PureComponent {
             style={styles.textInput}
             value={this.props.value.toString()}
             onChangeText={text => this.setState({ value: text })}
+            clearTextOnFocus={true}
             onSubmitEditing={() =>
               this.props.handleSubmitText(this.state.value)
             }
@@ -44,19 +45,20 @@ SettingWithTextInput.defaultProps = {
 
 const styles = StyleSheet.create({
   label: {
-    flex: 2,
+    flex: 1,
     fontSize: 14,
-    color: "#000",
+    color: "#f2b21d",
     fontWeight: "bold"
   },
   inputContainer: {
-    flex: 1,
-    borderBottomColor: "#000",
-    borderBottomWidth: 1
+    borderBottomColor: "#f2b21d",
+    borderBottomWidth: 1,
+    minWidth: 75
   },
   textInput: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#000"
+    color: "#f2b21d",
+    alignSelf: "center"
   }
 });

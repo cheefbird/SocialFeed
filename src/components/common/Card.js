@@ -10,9 +10,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
-    marginHorizontal: 8,
-    marginVertical: 5,
-    padding: 2
+    backgroundColor: "#23201a",
+    borderWidth: 2,
+    borderColor: "#f2b21d",
+    paddingVertical: 8,
+    paddingHorizontal: 14
   }
 });
