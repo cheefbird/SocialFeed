@@ -7,13 +7,12 @@ export default function Card(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#23201a",
     borderWidth: 2,
     borderColor: "#f2b21d",
     paddingVertical: 12,
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    marginHorizontal: 10,
+    marginTop: 10
   }
 });

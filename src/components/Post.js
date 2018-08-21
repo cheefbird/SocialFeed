@@ -19,7 +19,7 @@ export default function Post({ userImage, date, author, post }) {
         <Text style={styles.postText}>{post}</Text>
       </View>
       <View style={styles.iconContainer}>
-        <MaterialIcon name="chevron-right" size={50} color="#d8d8d8" />
+        <MaterialIcon name="chevron-right" size={50} color="#f2b21d" />
       </View>
     </TouchableOpacity>
   );
@@ -28,23 +28,22 @@ export default function Post({ userImage, date, author, post }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "stretch",
-    marginHorizontal: 8,
-    marginVertical: 5
+    justifyContent: "space-around"
   },
   imageContainer: {
-    justifyContent: "flex-start",
-    paddingTop: 8,
-    paddingRight: 5
+    alignItems: "center",
+    paddingTop: 10,
+    paddingRight: 10
   },
   image: {
-    width: 40,
-    height: 40,
-    borderRadius: 20
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: "#f2b21d"
   },
   contentContainer: {
-    flex: 9,
+    flex: 7,
     flexDirection: "column",
     justifyContent: "space-around"
   },
@@ -60,12 +59,13 @@ const styles = StyleSheet.create({
     paddingBottom: 8
   },
   authorText: {
-    fontSize: 14,
+    fontSize: 20,
     fontWeight: "bold",
     paddingBottom: 8,
-    color: "#000"
+    color: "#f2b21d"
   },
   postText: {
-    fontSize: 18
+    fontSize: 16,
+    color: "#f2b21d"
   }
 });

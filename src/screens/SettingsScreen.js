@@ -18,13 +18,11 @@ class SettingsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.card}>
-          <SettingWithTextInput
-            label="Number of results:"
-            handleSubmitText={this.updateSetting}
-            value={this.props.results}
-          />
-        </View>
+        <SettingWithTextInput
+          label="Number of results:"
+          handleSubmitText={this.updateSetting}
+          value={this.props.results}
+        />
       </View>
     );
   }
@@ -33,11 +31,6 @@ class SettingsScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  card: {
-    marginHorizontal: 10,
-    marginTop: 10,
-    backgroundColor: "yellow"
   }
 });
 
