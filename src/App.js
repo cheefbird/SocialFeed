@@ -16,7 +16,13 @@ const AppStack = createStackNavigator(
     Settings: SettingsScreen
   },
   {
-    initialRouteName: "Feed"
+    initialRouteName: "Feed",
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#23201a"
+      },
+      headerTintColor: "#f2b21d"
+    }
   }
 );
 
