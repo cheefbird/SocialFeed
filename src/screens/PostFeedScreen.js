@@ -13,6 +13,7 @@ import { connect } from "react-redux";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 
 import { fetchPosts } from "../actions";
+import Card from "../components/common/Card";
 import Post from "../components/Post";
 
 class PostFeedScreen extends Component {
@@ -56,14 +57,14 @@ class PostFeedScreen extends Component {
     const { name, profile_image_url_https } = user;
 
     return (
-      <View>
+      <Card>
         <Post
           userImage={profile_image_url_https}
           date={created_at}
           author={name}
           post={text}
         />
-      </View>
+      </Card>
     );
   };
 
