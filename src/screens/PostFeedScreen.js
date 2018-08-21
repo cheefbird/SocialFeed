@@ -57,7 +57,7 @@ class PostFeedScreen extends Component {
     const { name, profile_image_url_https } = user;
 
     return (
-      <Card>
+      <Card style={{ flex: 1 }}>
         <Post
           userImage={profile_image_url_https}
           date={created_at}

@@ -16,17 +16,19 @@ export default class SettingWithTextInput extends PureComponent {
   render() {
     return (
       <Card>
-        <Text style={styles.label}>{this.props.label}</Text>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.textInput}
-            value={this.props.value.toString()}
-            onChangeText={text => this.setState({ value: text })}
-            clearTextOnFocus={true}
-            onSubmitEditing={() =>
-              this.props.handleSubmitText(this.state.value)
-            }
-          />
+        <View style={styles.container}>
+          <Text style={styles.label}>{this.props.label}</Text>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.textInput}
+              value={this.props.value.toString()}
+              onChangeText={text => this.setState({ value: text })}
+              clearTextOnFocus={true}
+              onSubmitEditing={() =>
+                this.props.handleSubmitText(this.state.value)
+              }
+            />
+          </View>
         </View>
       </Card>
     );
@@ -44,6 +46,12 @@ SettingWithTextInput.defaultProps = {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 5
+  },
   label: {
     flex: 1,
     fontSize: 18,
