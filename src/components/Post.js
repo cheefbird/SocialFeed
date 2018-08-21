@@ -19,7 +19,7 @@ export default function Post({ userImage, date, author, post }) {
         <Text style={styles.postText}>{post}</Text>
       </View>
       <View style={styles.iconContainer}>
-        <MaterialIcon name="chevron-right" size={50} color="#d8d8d8" />
+        <MaterialIcon name="chevron-right" size={50} color="#f2b21d" />
       </View>
     </TouchableOpacity>
   );
