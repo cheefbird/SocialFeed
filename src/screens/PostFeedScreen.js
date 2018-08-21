@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     marginLeft: 8
   },
   list: {
-    backgroundColor: "#fff"
+    backgroundColor: "#e2dacc"
   }
 });
 

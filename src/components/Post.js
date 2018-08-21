@@ -63,9 +63,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     paddingBottom: 8,
-    color: "#000"
+    color: "#f2b21d"
   },
   postText: {
-    fontSize: 18
+    fontSize: 18,
+    color: "#f2b21d"
   }
 });
