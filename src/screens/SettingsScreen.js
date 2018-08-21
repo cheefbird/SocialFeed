@@ -6,6 +6,10 @@ import SettingWithTextInput from "../components/SettingWithTextInput";
 import { setResultsCount } from "../actions";
 
 class SettingsScreen extends Component {
+  static navigationOptions = {
+    title: "Settings"
+  };
+
   updateSetting = value => {
     const number = parseInt(value);
     this.props.setResultsCount(number);
