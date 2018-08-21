@@ -63,10 +63,13 @@ class PostFeedScreen extends Component {
           date={created_at}
           author={name}
           post={text}
+          onPress={() => this.handleSelection(item)}
         />
       </Card>
     );
   };
+
+  handleSelection = post => console.log(post);
 
   render() {
     const { loading } = this.props;

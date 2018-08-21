@@ -2,14 +2,14 @@ import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 
-export default function Post({ userImage, date, author, post }) {
+export default function Post({ userImage, date, author, post, onPress }) {
   const getFormattedDate = date => {
     const dateObject = new Date(date);
     return dateObject.toDateString();
   };
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.imageContainer}>
         <Image source={{ uri: userImage }} style={styles.image} />
       </View>
