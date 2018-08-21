@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
+  SafeAreaView,
+  StatusBar,
   FlatList,
   ActivityIndicator,
   TouchableOpacity
@@ -23,7 +25,7 @@ class PostFeedScreen extends Component {
           activeOpacity={0.5}
           onPress={() => navigation.navigate("Settings")}
         >
-          <MaterialIcon name="settings" size={26} color="#000" />
+          <MaterialIcon name="settings" size={26} color="#f2b21d" />
         </TouchableOpacity>
       ),
       headerBackTitle: "Back"
@@ -68,7 +70,8 @@ class PostFeedScreen extends Component {
   render() {
     const { loading } = this.props;
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" />
         {loading ? (
           <View style={styles.spinner}>
             <ActivityIndicator size="large" color="#ffa50a" />
@@ -82,7 +85,7 @@ class PostFeedScreen extends Component {
             style={styles.list}
           />
         )}
-      </View>
+      </SafeAreaView>
     );
   }
 }

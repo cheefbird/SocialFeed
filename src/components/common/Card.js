@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#23201a",
     borderWidth: 2,
     borderColor: "#f2b21d",
-    paddingVertical: 8,
-    paddingHorizontal: 14
+    paddingVertical: 12,
+    paddingHorizontal: 16
   }
 });

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import ReduxThunk from "redux-thunk";
@@ -16,7 +16,13 @@ const AppStack = createStackNavigator(
     Settings: SettingsScreen
   },
   {
-    initialRouteName: "Feed"
+    initialRouteName: "Feed",
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#23201a"
+      },
+      headerTintColor: "#f2b21d"
+    }
   }
 );
 
