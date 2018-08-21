@@ -23,7 +23,7 @@ class PostFeedScreen extends Component {
           activeOpacity={0.5}
           onPress={() => navigation.navigate("Settings")}
         >
-          <MaterialIcon name="settings" size={26} color="#000" />
+          <MaterialIcon name="settings" size={26} color="#f2b21d" />
         </TouchableOpacity>
       ),
       headerBackTitle: "Back"
