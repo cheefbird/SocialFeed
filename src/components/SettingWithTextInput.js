@@ -46,14 +46,14 @@ SettingWithTextInput.defaultProps = {
 const styles = StyleSheet.create({
   label: {
     flex: 1,
-    fontSize: 14,
+    fontSize: 18,
     color: "#f2b21d",
     fontWeight: "bold"
   },
   inputContainer: {
     borderBottomColor: "#f2b21d",
     borderBottomWidth: 1,
-    minWidth: 75
+    minWidth: 70
   },
   textInput: {
     fontSize: 18,
