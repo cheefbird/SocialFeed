@@ -2,6 +2,8 @@ import React, { PureComponent } from "react";
 import { StyleSheet, View, Text, TextInput } from "react-native";
 import PropTypes from "prop-types";
 
+import Card from "./common/Card";
+
 export default class SettingWithTextInput extends PureComponent {
   constructor(props) {
     super(props);
@@ -13,19 +15,20 @@ export default class SettingWithTextInput extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Card>
         <Text style={styles.label}>{this.props.label}</Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInput}
             value={this.props.value.toString()}
             onChangeText={text => this.setState({ value: text })}
+            clearTextOnFocus={true}
             onSubmitEditing={() =>
               this.props.handleSubmitText(this.state.value)
             }
           />
         </View>
-      </View>
+      </Card>
     );
   }
 }
@@ -41,28 +44,21 @@ SettingWithTextInput.defaultProps = {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-    marginHorizontal: 8,
-    marginVertical: 5
-  },
   label: {
-    flex: 2,
+    flex: 1,
     fontSize: 14,
-    color: "#000",
+    color: "#f2b21d",
     fontWeight: "bold"
   },
   inputContainer: {
-    flex: 1,
-    borderBottomColor: "#f2f2f2",
-    borderBottomWidth: 1
+    borderBottomColor: "#f2b21d",
+    borderBottomWidth: 1,
+    minWidth: 75
   },
   textInput: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#000"
+    color: "#f2b21d",
+    alignSelf: "center"
   }
 });
