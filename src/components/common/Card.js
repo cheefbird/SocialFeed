@@ -7,9 +7,10 @@ export default function Card(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flex: 1,
+    // flexDirection: "row",
+    // justifyContent: "space-between",
+    // alignItems: "center",
     backgroundColor: "#23201a",
     borderWidth: 2,
     borderColor: "#f2b21d",
