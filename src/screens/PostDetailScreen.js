@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
 import { formatDate } from "../utils/DateUtils";
-import Card from "../components/common/Card";
 
 export default class PostDetailScreen extends PureComponent {
   render() {
@@ -15,15 +14,10 @@ export default class PostDetailScreen extends PureComponent {
 
     return (
       <View style={styles.container}>
-        <Card style={styles.card}>
-          <Image
-            source={{ uri: profile_banner_url }}
-            style={{ width: 350, height: 117 }}
-          />
-          <Text>{date}</Text>
-          <Text>{name}</Text>
-          <Text>{text}</Text>
-        </Card>
+        <Image source={{ uri: profile_banner_url }} style={styles.image} />
+        <Text>{date}</Text>
+        <Text>{name}</Text>
+        <Text>{text}</Text>
       </View>
     );
   }
@@ -31,10 +25,19 @@ export default class PostDetailScreen extends PureComponent {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    justifyContent: "space-between",
+    marginBottom: 100,
+    backgroundColor: "red"
   },
   card: {
     justifyContent: "center",
-    alignItems: "flex-start"
+    alignItems: "flex-end"
+  },
+  image: {
+    width: 350,
+    height: 117,
+    borderColor: "#f2b21d",
+    borderWidth: 1
   }
 });
