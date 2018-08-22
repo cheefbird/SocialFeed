@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
+import { formatDate } from "../utils/DateUtils";
 import Card from "../components/common/Card";
 
 export default class PostDetailScreen extends PureComponent {
@@ -10,6 +11,8 @@ export default class PostDetailScreen extends PureComponent {
     const { created_at, user, text } = post;
     const { name, profile_banner_url } = user;
 
+    const date = formatDate(created_at);
+
     return (
       <View style={styles.container}>
         <Card style={styles.card}>
@@ -17,7 +20,7 @@ export default class PostDetailScreen extends PureComponent {
             source={{ uri: profile_banner_url }}
             style={{ width: 350, height: 117 }}
           />
-          <Text>{created_at}</Text>
+          <Text>{date}</Text>
           <Text>{name}</Text>
           <Text>{text}</Text>
         </Card>
