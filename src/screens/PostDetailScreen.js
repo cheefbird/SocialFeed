@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
 import Card from "../components/common/Card";
 
-export default class PostDetailScreen extends Component {
+export default class PostDetailScreen extends PureComponent {
   render() {
     const { navigation } = this.props;
     const post = navigation.getParam("post");
@@ -12,8 +12,11 @@ export default class PostDetailScreen extends Component {
 
     return (
       <View style={styles.container}>
-        <Card>
-          <Image source={{ uri: profile_banner_url }} style={{ flex: 1 }} />
+        <Card style={styles.card}>
+          <Image
+            source={{ uri: profile_banner_url }}
+            style={{ width: 350, height: 117 }}
+          />
           <Text>{created_at}</Text>
           <Text>{name}</Text>
           <Text>{text}</Text>
