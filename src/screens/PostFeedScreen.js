@@ -26,7 +26,7 @@ class PostFeedScreen extends Component {
           activeOpacity={0.5}
           onPress={() => navigation.navigate("Settings")}
         >
-          <MaterialIcon name="settings" size={26} color="#f2b21d" />
+          <MaterialIcon name="settings" size={26} color="#000000" />
         </TouchableOpacity>
       ),
       headerBackTitle: "Back"
@@ -75,7 +75,7 @@ class PostFeedScreen extends Component {
     const { loading } = this.props;
     return (
       <SafeAreaView style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar barStyle="dark-content" />
         {loading ? (
           <View style={styles.spinner}>
             <ActivityIndicator size="large" color="#ffa50a" />
