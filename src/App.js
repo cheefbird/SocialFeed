@@ -21,7 +21,8 @@ const AppStack = createStackNavigator(
     initialRouteName: "Feed",
     navigationOptions: {
       headerStyle: {
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        borderBottomWidth: 0
       },
       headerTintColor: "#000"
     }
