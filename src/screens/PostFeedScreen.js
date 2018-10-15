@@ -57,7 +57,7 @@ class PostFeedScreen extends Component {
     const { name, profile_image_url_https } = user;
 
     return (
-      <Card style={{ flex: 1 }}>
+      <Card>
         <Post
           userImage={profile_image_url_https}
           date={created_at}
@@ -87,6 +87,7 @@ class PostFeedScreen extends Component {
             renderItem={this.renderRow}
             ItemSeparatorComponent={this.separator}
             style={styles.list}
+            contentContainerStyle={styles.item}
           />
         )}
       </SafeAreaView>
@@ -96,7 +97,8 @@ class PostFeedScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "#fff"
   },
   spinner: {
     flex: 1,
@@ -115,6 +117,9 @@ const styles = StyleSheet.create({
   },
   list: {
     backgroundColor: "#fff"
+  },
+  item: {
+    padding: 0
   }
 });
 
